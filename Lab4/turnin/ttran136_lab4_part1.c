@@ -31,10 +31,10 @@ void Led(){
 			break;
 		case ButtonPress:
 			if(button == 0x01){
-				State = ButtonPress;
+				State = Init;
 			}
 			else if(button == 0x00){
-				State = Init;
+				State = ButtonPress;
 			}
 			break;
 		default: State = Start; 
