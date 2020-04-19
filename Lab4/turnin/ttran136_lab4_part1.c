@@ -12,7 +12,7 @@
 #include "simAVRHeader.h"
 #endif
 
-enum States {Start, Init, ButtonPress} State;
+enum States {Start, Init, ButtonPress, wait} State;
 unsigned char button = 0x00;
 
 void Led(){
@@ -31,9 +31,17 @@ void Led(){
 			break;
 		case ButtonPress:
 			if(button == 0x01){
-				State = Init;
+				State = ButtonPress;
 			}
 			else if(button == 0x00){
+				State = wait;
+			}
+			break;
+		case wait:
+			if(button == 0x00){
+				State = wait;
+			}
+			else if(button == 0x01){
 				State = ButtonPress;
 			}
 			break;
@@ -45,8 +53,14 @@ void Led(){
 			PORTB = 0x01;
 			break;
 		case ButtonPress:
-			PORTB = 0x02;
+			if(PORTB = 0x02){
+				PORTB = 0x01;
+			}
+			else if (PORTB = 0x01){
+				PORTB = 0x02;
+			}
 			break;
+		case wait: break;
 		default: break;
 	} 
 }	
