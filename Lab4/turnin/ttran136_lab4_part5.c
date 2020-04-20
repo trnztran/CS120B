@@ -12,7 +12,7 @@
 #include "simAVRHeader.h"
 #endif
 
-enum States {Start, pound, x1, y, x2, unlock, lock} State;
+enum States {Start, pound1, x1, y, x2, unlock, lock} State;
 unsigned char X = 0x00;
 unsigned char Y = 0x00;
 unsigned char pound = 0x00;			
@@ -23,36 +23,35 @@ unsigned char tmpC = 0x00;
 void deadbolt(){
 	switch(State){
 		case Start:
-			State = pound;
+			State = pound1;
 			break;
-		case pound:	//press pound
+		case pound1:	//press pound
 			if(!X && !Y && pound && !button){State = x1;}
-			else{State = pound;}
+			else{State = pound1;}
 			break;
 		case x1:
-			if{X && !Y && !pound && !button){State = y;}
-			else{State = pound;}
+			if(X && !Y && !pound && !button){State = y;}
+			else{State = pound1;}
 			break;
 		case y:
-			if{!X && Y && !pound && !button){State = x2;}
-			else{State = pound;}
+			if(!X && Y && !pound && !button){State = x2;}
+			else{State = pound1;}
 			break;	
 		case x2:
-			if{X && !Y && !pound && !button){State = unlock;}
-			else{State = pound;}
+			if(X && !Y && !pound && !button){State = unlock;}
+			else{State = pound1;}
 			break;	
 		case unlock:	//press button to lock
-			if{!X && !Y && !pound && button){State = lock;}
+			if(!X && !Y && !pound && button){State = lock;}
 			else{State = unlock;}
 			break;
 		case lock:
-			State = Init;
+			State = pound1;
 			break;
 		default:break;
 	}
 	switch(State){
-		case pound:break;
-		case pound: break;
+		case pound1: break;
 		case x1: break;
 		case y: break;
 		case x2: break;
@@ -75,7 +74,6 @@ int main(void) {
 	Y = PINA & 0x02;
 	pound = PINA & 0x04;
 	button = PINA & 0x80;
-	temp = 0x00;
 	while (1) {
     		deadbolt();
 	}
