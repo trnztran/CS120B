@@ -27,20 +27,14 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Example test:
-test "PINA: 0x04, 0x00, 0x01, 0x00, 0x00, 0x02, 0x00, 0x01 => PORTB: 0x01"
+test "PINA: 0x04, 0x01, 0x02, 0x01 => PORTB: 0x01"
 # Set inputs
 set State = Start
 setPINA 0x04
 continue 2
-setPINA 0x00
-continue 2
 setPINA 0x01
 continue 2
-setPINA 0x00
-continue 2
 setPINA 0x02
-continue 2
-setPINA 0x00
 continue 2
 setPINA 0x01
 continue 2
