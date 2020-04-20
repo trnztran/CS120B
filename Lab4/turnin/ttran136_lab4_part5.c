@@ -26,10 +26,12 @@ void test_sequence(){
 	while(1){
 		if(PINA == sequence[temp]){
 			temp = 0x01;
+			break;
 		}
 		else{
 			temp = 0;
 		}
+		break;
 	}
 }
 
