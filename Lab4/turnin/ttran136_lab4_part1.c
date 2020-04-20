@@ -58,7 +58,7 @@ void Led(){
 			break;
 		case released1:
 			break;
-		case pressed 2:
+		case pressed2:
 			PORTB = 0x01;
 			break;
 		case released2:

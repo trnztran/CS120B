@@ -27,7 +27,7 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Example test:
-test "PINA: 0x01, 0x00 => PORTB: 0x01"
+test "PINA: 0x01, 0x00 => PORTB: 0x02"
 # Set inputs
 set State = Init
 setPINA 0x01
@@ -36,12 +36,12 @@ continue 2
 setPINA 0x00
 continue 2
 # Set expect values
-expectPORTB 0x01
+expectPORTB 0x02
 # Check pass/fail
 checkResult
 
 test "PINA: 0x00, 0x01 => PORTB: 0x02"
-set State = ButtonPress
+set State = Init
 setPINA 0x00
 continue 2
 setPINA 0x01
@@ -58,9 +58,13 @@ continue 2
 expectPORTB 0x01
 checkResult
 
-test "PINA: 0x00 => PORTB: 0x02"
-set State = ButtonPress
+test "PINA: 0x01,0x00,0x01 => PORTB: 0x02"
+set State = released1
+setPINA 0x01
+continue 2
 setPINA 0x00
+continue 2
+setPINA 0x01
 continue 2
 expectPORTB 0x02
 checkResult
