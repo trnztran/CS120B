@@ -34,7 +34,7 @@ void Led(){
 				State = ButtonPress;
 			}
 			else if(button == 0x00){
-				State = wait;
+				State = Init;
 			}
 			break;
 		default: State = Start; 
