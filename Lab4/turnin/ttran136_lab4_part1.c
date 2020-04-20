@@ -45,12 +45,7 @@ void Led(){
 			PORTB = 0x01;
 			break;
 		case ButtonPress:
-			if(PORTB = 0x02){
-				PORTB = 0x01;
-			}
-			else if (PORTB = 0x01){
-				PORTB = 0x02;
-			}
+			PORTB = 0x02;
 			break;
 		default: break;
 	} 
