@@ -6,6 +6,9 @@
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
+ *
+ * demo link for part 2: https://drive.google.com/file/d/1O8xQPZ5fmuqCDIKgpTOqEnsyr9VEl2ZK/view?usp=sharing
+ *
  */
 #include <avr/io.h>
 #ifdef _SIMULATE_
