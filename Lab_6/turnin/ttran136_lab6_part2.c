@@ -119,7 +119,7 @@ void tick()
 		break;
 	}
 	
-	switch(STATES) //Actions
+	switch(state) //Actions
 	{
 		case led1:
 		PORTB=0x01;
