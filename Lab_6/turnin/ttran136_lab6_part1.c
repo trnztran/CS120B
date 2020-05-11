@@ -6,6 +6,8 @@
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
+ *
+ *	demo video for part 1,2,3: https://drive.google.com/file/d/1QLQfFOvnke7PooO3WSacv7ycJOy8e4Xc/view?usp=sharing
  */
 #include <avr/io.h>
 
