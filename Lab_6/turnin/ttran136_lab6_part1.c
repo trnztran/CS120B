@@ -10,7 +10,10 @@
  *	demo video for part 1,2,3: https://drive.google.com/file/d/1QLQfFOvnke7PooO3WSacv7ycJOy8e4Xc/view?usp=sharing
  */
 #include <avr/io.h>
-
+#include <avr/interrupt.h>
+#ifdef _SIMULATE_
+#include "simAVRHeader.h"
+#endif
 volatile unsigned char TimerFlag=0;
 unsigned long _avr_timer_M=1;
 unsigned long _avr_timer_cntcurr=0;
