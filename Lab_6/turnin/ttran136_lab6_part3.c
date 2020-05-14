@@ -93,7 +93,7 @@ void tick()
 		break;
 		case decrement:
 		if(button1){
-			state = rep_inc_wait;
+			state = rep_dec_wait;
 		}
 		else{
 			state = wait;
@@ -114,7 +114,7 @@ void tick()
 		state = rep_dec_wait;
 		break;
 		case rep_inc_wait:
-		if(button0&&(timer<10)){
+		if(button0 && (timer<10)){
 			state = rep_inc_wait;
 		}
 		else if(button0 &&(timer>=10)){
@@ -125,7 +125,7 @@ void tick()
 		}
 		break;
 		case rep_dec_wait:
-		if(button1&&(timer<10)){
+		if(button1 && (timer<10)){
 			state = rep_dec_wait;
 		}
 		else if(button1 &&(timer>=10)){
@@ -140,39 +140,44 @@ void tick()
 	
 	switch(state){
 		case Start:
-		break;
+			break;
 		case init:
-		tmpC = 0x07;
-		break;
+			tmpC = 0x07;
+			break;
 		case wait:
-		timer = 0;
+			timer = 0;
+			break;
 		case increment:
-		tmpC++;
-		timer++;
-		break;
+			if(tmpC<9){
+				tmpC++;
+				timer++;
+			}
+			break;
 		case decrement:
-		tmpC--;
-		timer++;
-		break;
+			if(tmpC>0{
+			tmpC--;
+			timer++;
+			}
+			break;
 		case reset:
-		tmpC = 0x00;
-		break;
+			tmpC = 0x00;
+			break;
 		case rep_inc_wait:
-		timer++;
-		break;
+			timer++;
+			break;
 		case rep_dec_wait:
-		timer++;
-		break;
+			timer++;
+			break;
 		case rep_inc:
-		tmpC++;
-		timer = 0;
-		break;
+			tmpC++;
+			timer = 0;
+			break;
 		case rep_dec:
-		tmpC--;
-		timer = 0;
-		break;
+			tmpC--;
+			timer = 0;
+			break;
 		default:
-		break;
+			break;
 	}
 }
 
