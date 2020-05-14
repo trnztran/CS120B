@@ -8,6 +8,7 @@
  *	code, is my own original work.
  *
  *  Demo link: https://drive.google.com/file/d/1RwEpCZEPsutEi35CTXPmGpJTU-0pJ9GL/view?usp=sharing
+ *  if the quality is not good, please let me know and I can send you the video file directly
  */
 #include <avr/io.h>
 #include <avr/interrupt.h>
