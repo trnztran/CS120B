@@ -8,16 +8,29 @@
  *	code, is my own original work.
  */
 #include <avr/io.h>
-#ifdef _SIMULATE_
-#include "simAVRHeader.h"
-#endif
 
-int main(void) {
-    /* Insert DDR and PORT initializations */
+void ADC_init() {
+	ADCSRA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
+}
 
-    /* Insert your solution below */
-    while (1) {
 
+unsigned short max = 0x0C7=8;
+unsigned short test = 0x00;
+	
+int main(void){	
+	DDRA = 0x00; PORTA = 0xFF;
+	DDRB = 0xFF; PORTB = 0x00;
+	ADC_init();
+	
+    while(1){
+					test = ADC;
+					if(test >= (max / 2))
+					{
+						PORTB = 0x01;
+					}
+					else
+					{
+						PORTB = 0x00;
+					}
     }
-    return 1;
 }
