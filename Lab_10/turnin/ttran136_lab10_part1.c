@@ -75,7 +75,7 @@ void tick2(){
             blinkingLED = 0x08;
             break;
         case blinkOff:
-            blinkigLED = 0x00;
+            blinkingLED = 0x00;
             break;
         default:
             break;
