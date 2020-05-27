@@ -14,11 +14,11 @@
 #include "timer.h"
 
 /* SM state declarations --- fill in as needed */
-typedef enum ping_states { PInit,                                           } ping_states;
+typedef enum ping_states { PInit,pingLow,pingHigh                           } ping_states;
 typedef enum detect_eq_states { DEQInit,  eq_detected                       } detect_eq_states;
-typedef enum detect_max_amp_states { DMAInit,                               } detect_max_amp_states;
+typedef enum detect_max_amp_states { DMAInit, DMA2                              } detect_max_amp_states;
 typedef enum detect_zc_states { DZCInit,                                    } detect_zc_states;
-typedef enum transmit_states {TInit,                                        } transmit_states;
+typedef enum transmit_states {TInit,combSM                                        } transmit_states;
 
 /* shared variables --- fill in as needed */
 
@@ -52,7 +52,8 @@ int main(void) {
     /* DDR and PORT initializations */
     DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0xFF; PORTB = 0x00;
-
+    amplitude = ~PINA & 0x07;
+    direction = ~PINA & 0xF8'
     // Common period for all tasks set to 100ms
     TimerSet(100);
     TimerOn();
