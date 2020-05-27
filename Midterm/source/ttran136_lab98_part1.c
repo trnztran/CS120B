@@ -53,7 +53,7 @@ int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0xFF; PORTB = 0x00;
     amplitude = ~PINA & 0x07;
-    direction = ~PINA & 0xF8'
+    direction = ~PINA & 0xF8;
     // Common period for all tasks set to 100ms
     TimerSet(100);
     TimerOn();
