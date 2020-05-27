@@ -3,14 +3,14 @@ void Detect_EQ()
     switch(detect_eq_state)
     {
         case DEQInit:
-            if(amplitude = 0){
+            if(amplitude == 0){
                 detect_eq_state = DEQInit;
             }
             else if(amplitude > 0){
                 detect_eq_statq = eq_detected;
             }
             else{
-                detect_eq_state = DEQInitl
+                detect_eq_state = DEQInit;
             }
             break;
         case eq_detected:
