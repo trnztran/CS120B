@@ -16,7 +16,7 @@ void Transmit()
         case TInit:
             break;
         case combSM:
-            PORTB = (ping|eq|DMA);
+            PORTB = (pingB|eq|DMA);
         default:
             break;
     }
