@@ -7,7 +7,7 @@ void Detect_EQ()
                 detect_eq_state = DEQInit;
             }
             else if(amplitude > 0){
-                detect_eq_statq = eq_detected;
+                detect_eq_state = eq_detected;
             }
             else{
                 detect_eq_state = DEQInit;
