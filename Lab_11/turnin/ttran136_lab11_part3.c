@@ -44,73 +44,73 @@ int tick(int state){
 					LCD_WriteData(tmpA + '0'); 
 					break;
 				case '4': 
-                    tmpA = 0x04; 
-                    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+					tmpA = 0x04; 
+					LCD_Cursor(1); 
+					LCD_WriteData(tmpA + '0'); 
+					break;
 				case '5': 
-                    tmpA = 0x05;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
-				case '6': 
-                    tmpA = 0x06;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+					tmpA = 0x05;
+					LCD_Cursor(1); 
+					LCD_WriteData(tmpA + '0'); 
+					break;
+				case '6':
+					tmpA = 0x06;
+					LCD_Cursor(1); 
+					LCD_WriteData(tmpA + '0'); 
+				        break;
 				case '7': 
-                    tmpA = 0x07;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+					tmpA = 0x07;
+					LCD_Cursor(1); 
+					LCD_WriteData(tmpA + '0'); 
+					break;
 				case '8': 
-                    tmpA = 0x08;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+                    		    	tmpA = 0x08;
+				    	LCD_Cursor(1); 
+                   		    	LCD_WriteData(tmpA + '0'); 
+                    		    	break;
 				case '9': 
-                    tmpA = 0x09;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+					tmpA = 0x09;
+					LCD_Cursor(1); 
+					LCD_WriteData(tmpA + '0'); 
+					break;
 				case 'A': 
-                    tmpA = 0x0A;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    break;
+                      		    	tmpA = 0x0A;
+				    	LCD_Cursor(1); 
+                   		    	LCD_WriteData(tmpA + 0x37); 
+                   		    	break;
 				case 'B': 
-                    tmpA = 0x0B;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    break;
+					tmpA = 0x0B;
+				    	LCD_Cursor(1); 
+					LCD_WriteData(tmpA + 0x37); 
+				        break;
 				case 'C': 
-                    tmpA = 0x0C;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    break;
+                    		    	tmpA = 0x0C;
+				    	LCD_Cursor(1); 
+                    		     	LCD_WriteData(tmpA + 0x37); 
+                    			break;
 				case 'D': 
-                    tmpA = 0x0D;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    break;
+                    			tmpA = 0x0D;
+				    	LCD_Cursor(1); 
+                    			LCD_WriteData(tmpA + 0x37); 
+                    			break;
 				case '*': 
-                    tmpA = 0x0E;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + 0x1C);
-                    break;
+                    			tmpA = 0x0E;
+				    	LCD_Cursor(1); 
+                    			LCD_WriteData(tmpA + 0x1C);
+                    			break;
 				case '0': 
-                    tmpA = 0x00;
-				    LCD_Cursor(1); 
-                    LCD_WriteData(tmpA + '0'); 
-                    break;
+                    			tmpA = 0x00;
+				    	LCD_Cursor(1); 
+                   			LCD_WriteData(tmpA + '0'); 
+                    			break;
 				case '#': 
-                    tmpA = 0x0F;
-				    LCD_Cursor(1);
-                    LCD_WriteData(tmpA + 0x14);
-                    break;
+                    			tmpA = 0x0F;
+				    	LCD_Cursor(1);
+                    			LCD_WriteData(tmpA + 0x14);
+                    			break;
 				default: 
-                    tmpA = 0x1B; 
-                    break; 
+                    			tmpA = 0x1B; 
+                    			break; 
 			}
 			state = output;
 			PORTA=tmpA;
