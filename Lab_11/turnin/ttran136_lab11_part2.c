@@ -10,22 +10,14 @@
 #include <avr/io.h>
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
+#endif
 #include "timer.h"
 #include "scheduler.h"
 #include "keypad.h"
 #include "io.c"
-#endif
-
-typedef struct task{
-	signed char task;
-	unsigned long int period;
-	unsigned long int elapsedTime;
-	int (*TickFct)(int);
-}task;
 
 enum states{output};
 
-unsigned char tmpB= 0x00;
 unsigned char cursor = 1;
 unsigned char i;
 
@@ -49,9 +41,8 @@ int tick(int state) {
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-    DDRA = 0xF0; PORTA = 0x0F;
-    DDRB = 0xFF; PORTB = 0x00;
-    DDRC = 0xF0; PORTC = 0x0F;
+    DDRA = 0xFF; PORTA = 0x00;
+    DDRC = 0xFF; PORTC = 0x00;
     DDRD = 0xFF; PORTD = 0x00;
 
     // unsigned long int
@@ -61,8 +52,8 @@ int main(void) {
 
 	 
 	task1.state = 0;//Task initial state.
-	task1.period = 2;//Task Period.
-	task1.elapsedTime = 2;//Task current elapsed time.
+	task1.period = 20;//Task Period.
+	task1.elapsedTime = 20;//Task current elapsed time.
     task1.TickFct = &tick;//Function pointer for the tick.
 
     TimerSet(10);
