@@ -10,20 +10,13 @@
 #include <avr/io.h>
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
+#endif
 #include "timer.h"
 #include "scheduler.h"
 #include "keypad.h"
-#endif
-
-typedef struct task{
-	signed char state;
-	unsigned long int period;
-	unsigned long int elapsedTime;
-	int(*TickFct)(int);
-}task;
 
 enum States{output};
-unsigned char tmpB= 0x00;
+unsigned char tmpA= 0x00;
 
 int tick(int state) {
   unsigned char input;
@@ -32,70 +25,69 @@ int tick(int state) {
     case output:
     	switch(input) {
       		case '\0':
-      			tmpB= 0x1F;
+      			tmpA= 0x1F;
       			break;
       		case '1':
-      			tmpB = 0x01;
+      			tmpA = 0x01;
       			break;
       		case '2':
-      			tmpB = 0x02;
+      			tmpA = 0x02;
       			break;
       		case '3':
-      			tmpB = 0x03;
+      			tmpA = 0x03;
       			break;
      		case '4':
-      			tmpB = 0x04;
+      			tmpA = 0x04;
       			break;
       		case '5':
-      			tmpB = 0x05;
+      			tmpA = 0x05;
       			break;
       		case '6':
-      			tmpB = 0x06;
+      			tmpA = 0x06;
       			break;
       		case '7':
-      			tmpB = 0x07;
+      			tmpA = 0x07;
       			break;
       		case '8':
-      			tmpB = 0x08;
+      			tmpA = 0x08;
       			break;
       		case '9':
-      			tmpB = 0x09;
+      			tmpA = 0x09;
       			break;
       		case 'A':
-      			tmpB = 0x0A;
+      			tmpA = 0x0A;
       			break;
       		case 'B':
-      			tmpB = 0x0B;
+      			tmpA = 0x0B;
       			break;
       		case 'C':
-      			tmpB = 0x0C;
+      			tmpA = 0x0C;
       			break;
       		case 'D':
-      			tmpB = 0x0D;
+      			tmpA = 0x0D;
       			break;
       		case '*':
-      			tmpB = 0x0E;
+      			tmpA = 0x0E;
       			break;
       		case '0':
-      			tmpB = 0x00;
+      			tmpA = 0x00;
       			break;
       		case '#':
-      			tmpB = 0x0F;
+      			tmpA = 0x0F;
       			break;
       		default:
-      			tmpB = 0x1B;
+      			tmpA = 0x1B;
       			break;
     }
     state = output;
-    PORTB = tmpB;
+    PORTB = tmpA;
     break;
   }
   return state;
 }
 int main(void) {
     /* Insert DDR and PORT initializations */
-    DDRA = 0xF0; PORTA = 0x0F;
-    DDRB = 0xFF; PORTB = 0x00;
+    DDRA = 0xFF; PORTA = 0x00;
     DDRC = 0xF0; PORTC = 0x0F;
     DDRD = 0xFF; PORTD = 0x00;
 
