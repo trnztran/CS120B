@@ -33,97 +33,97 @@ int SMTick1(int state){
 					break; 
 				case '2': 
 					tmpA = 0x02;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                    			cursor++; 
+                    			break;
 				case '3': 
-                    tmpA = 0x03;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x03;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                    			cursor++; 
+                    			break;
 				case '4': 
-                    tmpA = 0x04; 
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x04; 
+				    	LCD_Cursor(cursor); 
+					LCD_WriteData(tmpA + '0'); 
+				    	cursor++; 
+					break;
 				case '5': 
-                    tmpA = 0x05;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    		    	tmpA = 0x05;
+				    	LCD_Cursor(cursor); 
+                    		    	LCD_WriteData(tmpA + '0'); 
+                      		    	cursor++; 
+					break;
 				case '6': 
-                    tmpA = 0x06;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x06;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+					cursor++; 
+					break;
 				case '7': 
-                    tmpA = 0x07;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x07;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                   			cursor++; 
+                    			break;
 				case '8': 
-                    tmpA = 0x08;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x08;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                    			cursor++; 
+                    			break;
 				case '9': 
-                    tmpA = 0x09;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x09;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                    			cursor++; 
+                    			break;
 				case 'A': 
-                    tmpA = 0x0A;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0A;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x37); 
+                    			cursor++; 
+                   			break;
 				case 'B': 
-                    tmpA = 0x0B;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0B;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x37); 
+                    			cursor++; 
+                    			break;
 				case 'C': 
-                    tmpA = 0x0C;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0C;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x37); 
+                    			cursor++; 
+                    			break;
 				case 'D': 
-                    tmpA = 0x0D;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x37); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0D;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x37); 
+                    			cursor++; 
+                    			break;
 				case '*': 
-                    tmpA = 0x0E;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x1C); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0E;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x1C); 
+                    			cursor++; 
+                    			break;
 				case '0': 
-                    tmpA = 0x00;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + '0'); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x00;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + '0'); 
+                    			cursor++; 
+                    			break;
 				case '#': 
-                    tmpA = 0x0F;
-				    LCD_Cursor(cursor); 
-                    LCD_WriteData(tmpA + 0x14); 
-                    cursor++; 
-                    break;
+                    			tmpA = 0x0F;
+				    	LCD_Cursor(cursor); 
+                    			LCD_WriteData(tmpA + 0x14); 
+                    			cursor++; 
+                    			break;
 				default: 
-                    tmpA = 0x1B; 
-                    break; 
+                    			tmpA = 0x1B; 
+                    			break; 
 			}
 			if(cursor==17){
 				cursor=1;
