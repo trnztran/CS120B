@@ -11,7 +11,6 @@
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
 #endif
-#include "bit.h"
 #include "timer.h"
 #include "io.h"
 #include "keypad.h"
@@ -122,9 +121,7 @@ int tick(int state){
 
 int main()
 {
-
 	DDRA = 0xFF; PORTA = 0x00;
-	DDRB = 0xFF; PORTB = 0x00;
 	DDRC = 0xF0; PORTC = 0x0F; 
 	DDRD = 0xFF; PORTD = 0x00;
 	
